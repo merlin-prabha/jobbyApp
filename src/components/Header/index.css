@@ -1,0 +1,32 @@
+.nav-container {
+  background-color: #272727;
+  height: 10%;
+  width: 100%;
+  padding: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Roboto';
+}
+.website-logo {
+  width: 60%;
+}
+.home-jobs-list-container {
+  color: #ffffff;
+  display: flex;
+}
+.home-jobs-list {
+  color: #ffffff;
+  list-style-type: none;
+  margin-right: 20px;
+  font-size: 20px;
+  text-decoration: none;
+}
+.logout-button {
+  background-color: #4f46e5;
+  border-width: 0px;
+  border-radius: 5px;
+  width: 90px;
+  color: #ffffff;
+}

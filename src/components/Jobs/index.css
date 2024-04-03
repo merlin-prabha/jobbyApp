@@ -1,0 +1,111 @@
+.jobs-container {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Roboto';
+  padding: 50px;
+  height: 100vh;
+  display: flex;
+}
+.profile-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  padding: 10px;
+}
+.retry-btn {
+  background-color: #4f46e5;
+  border-width: 0px;
+  border-radius: 5px;
+  padding: 10px;
+  color: #ffffff;
+}
+.profile-bg-container {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
+  background-size: cover;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+.profile-img {
+  width: 20%;
+}
+.profile-name {
+  color: #4f46e5;
+  font-size: 20px;
+}
+.profile-bio {
+  color: #121212;
+  font-size: 18px;
+}
+.jobs-content-container {
+  width: 80%;
+}
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+.search-input {
+  background-color: transparent;
+  border: 1px #64748b solid;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-right: none;
+  width: 60%;
+  padding: 10px;
+  color: #ffffff;
+  margin-left: 30px;
+}
+.jobs-display-container {
+  width: 70%;
+  padding: 30px;
+}
+.failure-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+.failure-heading {
+  font-size: 30px;
+}
+.retry-btn {
+  background-color: #4f46e5;
+  border-radius: 5px;
+  padding: 10px;
+  color: #ffffff;
+  border-width: 0px;
+}
+.result-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.jobs-list-container {
+  display: flex;
+  flex-direction: column;
+}
+.input-container {
+  display: flex;
+}
+.search-icon-btn {
+  background-color: transparent;
+  border: 1px #64748b solid;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-left: none;
+}
+.search-icon {
+  color: #ffffff;
+}
