@@ -3,9 +3,16 @@
   color: #ffffff;
   font-family: 'Roboto';
   padding: 50px;
+  padding-right: 0px;
   height: 100vh;
   display: flex;
+  overflow: auto;
 }
+.filters-container {
+  overflow-y: scroll;
+  padding: 20px;
+}
+
 .profile-container {
   width: 100%;
   display: flex;
@@ -46,6 +53,7 @@
 }
 .jobs-content-container {
   width: 80%;
+  overflow-y: scroll;
 }
 .loader-container {
   display: flex;

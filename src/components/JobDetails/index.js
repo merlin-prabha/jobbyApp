@@ -106,7 +106,7 @@ class JobDetails extends Component {
           type="button"
           id="button"
           className="job-item-failure-button"
-          onClick={this.getJobData}
+          onClick={this.getJobDetails}
         >
           Retry
         </button>

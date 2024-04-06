@@ -46,6 +46,29 @@ const salaryRangesList = [
   },
 ]
 
+const locationsList = [
+  {
+    locationId: 'HYDERABAD',
+    label: 'Hyderabad',
+  },
+  {
+    locationId: 'BANGALORE',
+    label: 'Bangalore',
+  },
+  {
+    locationId: 'CHENNAI',
+    label: 'Chennai',
+  },
+  {
+    locationId: 'DELHI',
+    label: 'Delhi',
+  },
+  {
+    locationId: 'MUMBAI',
+    label: 'Mumbai',
+  },
+]
+
 const apiStatusConstants = {
   initial: 'INITIAL',
   inProgress: 'INPROGRESS',
@@ -69,6 +92,7 @@ class Jobs extends Component {
     searchInput: '',
     apiStatus: apiStatusConstants.initial,
     profileData: [],
+    selectedLocation: '',
   }
 
   componentDidMount() {
@@ -154,8 +178,16 @@ class Jobs extends Component {
 
   getJobsList = async () => {
     this.setState({apiJobStatus: apiJobsStatusConstants.inProgress})
-    const {typeOfEmployment, salaryRange, searchInput} = this.state
-    const apiUrl = `https://apis.ccbp.in/jobs?employment_type=${typeOfEmployment.join()}&minimum_package=${salaryRange}&search=${searchInput}`
+    const {
+      typeOfEmployment,
+      salaryRange,
+      searchInput,
+      selectedLocation,
+      apiStatus,
+    } = this.state
+    console.log(typeOfEmployment)
+    console.log(selectedLocation)
+    const apiUrl = `https://apis.ccbp.in/jobs?employment_type=${typeOfEmployment.join()}&minimum_package=${salaryRange}&search=${searchInput}&location=${selectedLocation}`
     const jwtToken = Cookies.get('jwt_token')
     const options = {
       headers: {
@@ -276,6 +308,10 @@ class Jobs extends Component {
     )
   }
 
+  changeLocation = location => {
+    this.setState({selectedLocation: location}, this.getJobsList)
+  }
+
   render() {
     const {searchInput} = this.state
 
@@ -287,6 +323,7 @@ class Jobs extends Component {
             <div className="profile-container">{this.getProfile()}</div>
             <hr />
             <FiltersGroup
+              locationsList={locationsList}
               employmentTypesList={employmentTypesList}
               salaryRangesList={salaryRangesList}
               searchInput={searchInput}
@@ -294,6 +331,7 @@ class Jobs extends Component {
               onEnterSearchInput={this.onEnterSearchInput}
               changeSalary={this.changeSalary}
               changeEmployeeList={this.changeTypeOfEmployment}
+              changeLocation={this.changeLocation}
             />
           </div>
           <div className="jobs-content-container">
@@ -312,7 +350,7 @@ class Jobs extends Component {
                   className="search-icon-btn"
                   onClick={this.getJobsList}
                 >
-                  <BsSearch className="search-icon" />
+                  <BsSearch className="search-icon" aria-label="close" />
                 </button>
               </div>
               <div className="result-container">{this.renderResult()}</div>
